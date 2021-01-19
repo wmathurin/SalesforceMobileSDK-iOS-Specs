@@ -118,9 +118,9 @@ copy_specs ()
 }
 
 ROOT_FOLDER=$(get_root_folder)
-IOS_SDK_REPO_PATH="https://github.com/forcedotcom/SalesforceMobileSDK-iOS.git"
+IOS_SDK_REPO_PATH="https://github.com/wmathurin/SalesforceMobileSDK-iOS.git"
 IOS_SDK_FOLDER="SalesforceMobileSDK-iOS"
-IOS_HYBRID_SDK_REPO_PATH="https://github.com/forcedotcom/SalesforceMobileSDK-iOS-Hybrid.git"
+IOS_HYBRID_SDK_REPO_PATH="https://github.com/wmathurin/SalesforceMobileSDK-iOS-Hybrid.git"
 IOS_HYBRID_SDK_FOLDER="SalesforceMobileSDK-iOS-Hybrid"
 
 
