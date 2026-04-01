@@ -70,20 +70,21 @@ SalesforceMobileSDK-iOS-Specs/
 │   │   └── SalesforceHybridSDK.podspec
 │   └── ...
 │
-├── SalesforceReact/              # React Native specs
-│   ├── 13.2.0/
-│   │   └── SalesforceReact.podspec
-│   └── ...
-│
 ├── SalesforceFileLogger/         # File logger specs
 │   ├── 13.2.0/
 │   │   └── SalesforceFileLogger.podspec
 │   └── ...
 │
 ├── AgentforceSDK/                # Agentforce SDK specs
-├── SalesforceSwiftSDK/           # Swift SDK specs
-├── FMDB/                         # FMDB (SQLite wrapper) specs
-├── cmark_gfm/                    # Markdown parser specs
+├── AgentforceService/            # Agentforce Service specs
+├── cmark_gfm/                    # Markdown parser specs (Agentforce dependency)
+├── swift-markdown-ui/            # Swift markdown UI specs (Agentforce dependency)
+├── NetworkImage/                 # Network image specs (Agentforce dependency)
+├── SalesforceCache/              # Cache specs (Agentforce dependency)
+├── SalesforceLogging/            # Logging specs (Agentforce dependency)
+├── SalesforceNavigation/         # Navigation specs (Agentforce dependency)
+├── SalesforceNetwork/            # Network specs (Agentforce dependency)
+├── SalesforceUser/               # User specs (Agentforce dependency)
 └── update.sh                     # Helper script to update specs
 ```
 
@@ -182,15 +183,6 @@ git push origin master
 ```
 6. **Consumers Update**: Apps run `pod update` to get new version
 
-### CocoaPods Trunk (Optional)
-
-Some pods may also be published to CocoaPods Trunk (central repository):
-```bash
-pod trunk push MobileSync.podspec
-```
-
-This makes them available without specifying a custom source in Podfile.
-
 ## Podspec Validation
 
 Before publishing, podspecs should be validated:
@@ -206,7 +198,9 @@ pod spec lint MobileSync/13.2.0/MobileSync.podspec \
 
 ## Libraries Distributed
 
-All iOS SDK libraries are available via this specs repo:
+iOS SDK libraries available via this specs repo:
+
+### Core Mobile SDK Libraries
 
 | Library | Purpose |
 |---------|---------|
@@ -216,10 +210,22 @@ All iOS SDK libraries are available via this specs repo:
 | **SmartStore** | Encrypted SQLite storage (SQLCipher) |
 | **MobileSync** | Data synchronization framework |
 | **SalesforceHybridSDK** | Cordova hybrid app support |
-| **SalesforceReact** | React Native bridge |
 | **SalesforceFileLogger** | File-based logging |
+
+### Agentforce Libraries
+
+| Library | Purpose |
+|---------|---------|
 | **AgentforceSDK** | Agentforce agent functionality |
-| **SalesforceSwiftSDK** | Modern Swift SDK layer |
+| **AgentforceService** | Agentforce service layer |
+| **cmark_gfm** | Markdown parser (dependency) |
+| **swift-markdown-ui** | Swift markdown UI (dependency) |
+| **NetworkImage** | Network image loading (dependency) |
+| **SalesforceCache** | Caching utilities (dependency) |
+| **SalesforceLogging** | Logging framework (dependency) |
+| **SalesforceNavigation** | Navigation utilities (dependency) |
+| **SalesforceNetwork** | Network layer (dependency) |
+| **SalesforceUser** | User management (dependency) |
 
 ## Development Workflow
 
